@@ -82,7 +82,7 @@
 #' plot_shiny(fit.vbvs$fpca.obj)
 #' }
 vbvs_concurrent = function(formula, id.var = NULL, data=NULL, Kt = 5, Kp = 2, v0 = 0.01, v1 = 100,
-                           standardized = FALSE, t.min = NULL, t.max = NULL){
+                           standardized = FALSE, t.min = NULL, t.max = NULL, A = .5, B = .5, Atheta = .5, Btheta = .5){
   
   ## parse formula
   LHS = as.character(formula)[2]
@@ -161,10 +161,6 @@ vbvs_concurrent = function(formula, id.var = NULL, data=NULL, Kt = 5, Kp = 2, v0
   }
   
   ## hyper parameters for inverse gaussians, bernoulli
-  A = .5
-  B = .5
-  Atheta = .5
-  Btheta = .5
 
   ## matrices to to approximate paramater values
   mu.q.gamma = rep(1, p)  
